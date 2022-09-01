@@ -1,0 +1,1 @@
+export const PAGE_ONE_TITLE = "Product List"

@@ -1,11 +1,25 @@
-import React from 'react';
+import { FC } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import ProductList from './components/ProductList';
+import routes from "./routes";
 
-function App() {
+
+const App: FC = () => {
   return (
     <div className="App">
-      <ProductList />
+      <BrowserRouter>
+        <Routes>
+           {
+            routes.map((route) => {
+              return <Route
+                  path={route.path}
+                  key={route.key}
+                  element={route.element}
+                />
+            })
+           }
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

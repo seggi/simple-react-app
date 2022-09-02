@@ -11,7 +11,7 @@ interface InitialState {
 }
 
 const INITIAL_STATE: InitialState = {
-    data: {},
+    data: [],
     error: {},
     loading: false,
 }

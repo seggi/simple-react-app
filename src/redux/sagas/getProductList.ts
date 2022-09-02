@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from "redux-saga/effects";
 import { fetchData } from '../../helpers';
 import { 
     GET_PRODUCT_LIST_START, 
@@ -10,7 +10,7 @@ export interface ResponseGenerator{}
 
 function* getProductListData() {
     try {
-        const productListData: ResponseGenerator = yield call(fetchData, "/");
+        const productListData: ResponseGenerator = yield call(fetchData, '');
         yield put({type: GET_PRODUCT_LIST_SUCCESS, data: productListData})
     } catch (e: any) {
         yield put({ type: GET_PRODUCT_LIST_FAIL, error: e.message });

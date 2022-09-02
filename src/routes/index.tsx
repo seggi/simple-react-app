@@ -1,5 +1,5 @@
 import {  ReactElement } from "react";
-import ProductList from "../components/ProductList";
+import  ProductListContainer  from "../containers/ProductListContainer";
 
 interface RouteElement {
     path: string;
@@ -16,7 +16,7 @@ const routes: Routes = [
         path: "/product-list",
         isProtected: false,
         key: "login",
-        element: <ProductList/>,
+        element: <ProductListContainer/>,
       },
 ]
 

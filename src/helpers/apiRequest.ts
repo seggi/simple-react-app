@@ -1,31 +1,28 @@
-import "dotenv/config";
-import axios from "axios";
-
-const { URL_API } = process.env;
+const { REACT_APP_URL_API } = process.env;
 const contentType: {} = { "Content-Type": "application/json" };
-const defaultUrls: {apiV1: any} = { apiV1: "/api/v1" };
-
-const api = axios.create({
-  baseURL: URL_API,
-  headers: contentType,
-});
 
 interface RequestOptions {
     method: string,
-    api: any,
     body: any
+    headers: any
 }
 
 const apiRequest = async (requestMethod: string, url: any, data: any = null) => {
+  
   const requestOptions: RequestOptions = {
-    api,
     method: requestMethod,
     body: JSON.stringify(data),
+    headers: contentType,
   };
 
   try {
-    const response = await fetch(`${defaultUrls.apiV1}/${url}`, requestOptions);
+   if (requestMethod === "GET") {
+    const response = await fetch(`${REACT_APP_URL_API}/${url}`);
     return response.json();
+   }
+   const response = await fetch(`${REACT_APP_URL_API}/${url}`, requestOptions);
+   return response.json();
+    
   } catch (e) {
     console.log(e);
   }

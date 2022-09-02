@@ -1,5 +1,5 @@
 import React from 'react'
-import { PAGE_ONE_TITLE } from '../constants/appLabel'
+import { FOOT_TEXT, PAGE_ONE_TITLE } from '../constants/appLabel'
 import './style.css';
 
 
@@ -21,7 +21,105 @@ const ProductList = () => {
                 </div>
             </div>
             <div className="content-box__bottom-items">
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
 
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
+
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
+
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
+
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
+
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
+
+                <div className="custom-card">
+                    <div className="check-box__item">
+                        <input type="checkbox" />
+                    </div>
+                    <div className="item-description">
+                        <span>JVC200123</span>
+                        <span>AcmeDISC</span>
+                        <span>1.00 $</span>
+                        <span>Size: 700 MB</span>
+                    </div>
+                </div>
+            </div>
+            <div className="content-box__foot-items">
+                <div className="footer-item">
+                    <span>{FOOT_TEXT}</span>
+                </div>
             </div>
         </div>
     </>

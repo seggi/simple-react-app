@@ -1,1 +1,1 @@
-export const actions = "";
+export * from "./actions/getProductList";

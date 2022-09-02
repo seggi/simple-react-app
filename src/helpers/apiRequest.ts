@@ -1,12 +1,11 @@
-import "dotenv/config";
 import axios from "axios";
 
-const { URL_API } = process.env;
+const { REACT_APP_URL_API } = process.env;
 const contentType: {} = { "Content-Type": "application/json" };
-const defaultUrls: {apiV1: any} = { apiV1: "/api/v1" };
+const defaultUrls: {apiV1: any} = { apiV1: "/" };
 
 const api = axios.create({
-  baseURL: URL_API,
+  baseURL: REACT_APP_URL_API,
   headers: contentType,
 });
 

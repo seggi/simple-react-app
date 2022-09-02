@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { FOOT_TEXT, PAGE_ONE_TITLE } from '../constants/appLabel'
 import './style.css';
 
-
-const ProductList = () => {
+const ProductList: FC = () => {
   return (
     <>
         <div className="content-box">

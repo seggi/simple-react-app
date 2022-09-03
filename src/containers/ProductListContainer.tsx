@@ -1,20 +1,30 @@
-import { FC, useEffect } from "react"
+import { FC, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import ProductList from "../components/ProductList"
 import { getProductList } from "../redux/actions";
 import { RootState } from "../redux/reducers";
 
-const  ProductListContainer: FC = () => {
+const  ProductListContainer = () => {
     const dispatch = useDispatch();
-    const {data, error, loading}= useSelector((state: RootState ) =>state.getProductList);
+    const [requestData, setRequestData] = useState();
+    const {data: {records}, error, loading}= useSelector((state: RootState ) =>state.getProductList);
+    
+   
     useEffect(() => {
         dispatch(getProductList())
     }, [dispatch])
+
+
     return (
         <>
-            <ProductList />
+            <ProductList requestData={records} />
+           
         </>
     )
+	
 }
+
+
+
 
 export default ProductListContainer;

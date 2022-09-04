@@ -31,7 +31,10 @@
 .right-btn {
     border-radius: 4px;
     border: 1px solid #333;
-    padding: 12px 8px 12px 8px;
+    padding: 12px 12px 12px 12px;
+    text-decoration: none;
+    color: #333;
+    margin-top: 4px;
 }
 
 .right-btn:hover {
@@ -39,13 +42,18 @@
     background-color: #eee;
 }
 
-.left-btn {
+.left-items a {
+    color: #333;
     border-radius: 4px;
     border: 1px solid #333;
     padding: 12px 8px 12px 8px;
+    background: #fff;
+    font-size: 14;
+    margin-top: 4px;
+    text-decoration: none;
 }
 
-.left-btn:hover {
+.left-items a:hover {
     cursor: pointer;
     background-color: #eee;
 }

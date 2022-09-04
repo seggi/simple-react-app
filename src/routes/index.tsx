@@ -1,4 +1,5 @@
 import {  ReactElement } from "react";
+import AddProductContainer from "../containers/AddProductContainer";
 import  ProductListContainer  from "../containers/ProductListContainer";
 
 interface RouteElement {
@@ -17,6 +18,12 @@ const routes: Routes = [
         isProtected: false,
         key: "login",
         element: <ProductListContainer/>,
+    },
+    {
+        path: "/add-product",
+        isProtected: false,
+        key: "login",
+        element: <AddProductContainer/>,
       },
 ]
 

@@ -1,4 +1,6 @@
-import { FOOT_TEXT, PAGE_ONE_TITLE } from '../constants/appLabel'
+import { ADD_BTN, DELETE_BTN, PAGE_ONE_TITLE } from '../constants/appLabel'
+import Footer from './common/Footer';
+import TopBar from './common/TopBar';
 import './style.css';
 
 
@@ -7,25 +9,18 @@ const ProductList = ({requestData, loading, handleCheck,  onHandleDeleteItems}:a
   return (
     <>
         <div className="content-box">
-            <div className="content-box__top-items">
-                <div className="content-box__column">
-                    <div className="right-item">
-                        <h2 className="page-title">
-                            {PAGE_ONE_TITLE}
-                        </h2>
-                    </div>
-                    <div className="left-items">
-                        <button className="right-btn">ADD</button>
-                        <button className="left-btn" onClick={onHandleDeleteItems}>MASS DELETE</button>
-                    </div>
-                </div>
-            </div>
+           <TopBar 
+            fn={onHandleDeleteItems} 
+            btnOne={ADD_BTN} 
+            btnTwo={DELETE_BTN} 
+            pageTitle={PAGE_ONE_TITLE}/>
             <div className="content-box__bottom-items">
                 {requestData?.map((obj:any, index:any) => ( 
                     <div className="custom-card" key={index}>
                         <div className="check-box__item">
                            <input 
-                           type={'checkbox'}
+                            className='delete-checkbox'
+                            type={'checkbox'}
                             name={"id"}
                             value={obj.id}
                             onChange={handleCheck}
@@ -40,11 +35,7 @@ const ProductList = ({requestData, loading, handleCheck,  onHandleDeleteItems}:a
                     </div>
                 ))}
             </div>
-            <div className="content-box__foot-items">
-                <div className="footer-item">
-                    <span>{FOOT_TEXT}</span>
-                </div>
-            </div>
+            <Footer/>
         </div>
     </>
   )

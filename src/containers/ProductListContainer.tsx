@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import ProductList from "../components/ProductList"
-import { getProductList } from "../redux/actions";
+import { getProductList, deleteProduct } from "../redux/actions";
 import { RootState } from "../redux/reducers";
 
 const  ProductListContainer: React.FC =  ()  => {
@@ -22,10 +22,14 @@ const  ProductListContainer: React.FC =  ()  => {
             list.splice(checkedL.indexOf(value), 1)
         }
         setChecked(list)
-       }
+    }
     
-    const onHandleDeleteItems = () => {}
-
+    const onHandleDeleteItems = () => {
+        if (checkedL.length !== 0) {
+            dispatch(deleteProduct(checkedL));
+        }
+        setChecked([]);
+    }
 
     return (
         <>

@@ -1,5 +1,5 @@
 const { REACT_APP_URL_API } = process.env;
-const contentType: {} = { "Content-Type": "application/json" };
+const contentType: {} = {'Content-type': 'application/json'  };
 
 interface RequestOptions {
     method: string,
@@ -8,7 +8,6 @@ interface RequestOptions {
 }
 
 const apiRequest = async (requestMethod: string, url: any, data: any = null) => {
-  
   const requestOptions: RequestOptions = {
     method: requestMethod,
     body: JSON.stringify(data),
@@ -22,6 +21,8 @@ const apiRequest = async (requestMethod: string, url: any, data: any = null) => 
    }
    const response = await fetch(`${REACT_APP_URL_API}/${url}`, requestOptions);
    return response.json();
+
+ 
     
   } catch (e) {
     console.log(e);

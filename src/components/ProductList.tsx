@@ -4,8 +4,7 @@ import { Checkbox } from './CheckBox';
 import './style.css';
 // import { Checkbox } from './CheckBox';
 
-const ProductList = ({requestData}:any) => {
-    const [data, setData] = useState(requestData);
+const ProductList = ({requestData, loading}:any) => {
 
   return (
     <>
@@ -24,13 +23,13 @@ const ProductList = ({requestData}:any) => {
                 </div>
             </div>
             <div className="content-box__bottom-items">
-                {data.map((obj:any, index:any) => ( 
+                {requestData?.map((obj:any, index:any) => ( 
                     <div className="custom-card">
                         <div className="check-box__item" key={index}>
                             <Checkbox
                                 objData={obj}
                                 onChange={(item:any) => {
-                                    setData(data.map((d:any) => (d.order === item.order ? item : d)));
+                                    // setData(data.map((d:any) => (d.order === item.order ? item : d)));
                                 }}
                             />
                         </div>

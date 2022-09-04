@@ -1,4 +1,8 @@
-import { GET_PRODUCT_LIST_START, GET_PRODUCT_LIST_SUCCESS } from './../../constants/action-types/productTypes';
+import { 
+  GET_PRODUCT_LIST_START, 
+  GET_PRODUCT_LIST_SUCCESS,
+  GET_PRODUCT_LIST_FAIL
+} from './../../constants/action-types/productTypes';
 
 
 export const getProductList = () => ({type: GET_PRODUCT_LIST_START});
@@ -9,6 +13,6 @@ export const getProductListSuccess = (productList:any) => ({
 })
 
 export const getProductListError = (error:any) => ({
-  type: GET_PRODUCT_LIST_SUCCESS,
+  type: GET_PRODUCT_LIST_FAIL,
   payload: error
 })

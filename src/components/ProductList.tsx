@@ -1,8 +1,9 @@
-import React, { FC } from 'react'
 import { FOOT_TEXT, PAGE_ONE_TITLE } from '../constants/appLabel'
 import './style.css';
 
-const ProductList: FC = () => {
+
+const ProductList = ({requestData, loading, handleCheck,  onHandleDeleteItems}:any) => {
+
   return (
     <>
         <div className="content-box">
@@ -15,105 +16,29 @@ const ProductList: FC = () => {
                     </div>
                     <div className="left-items">
                         <button className="right-btn">ADD</button>
-                        <button className="left-btn">MASS DELETE</button>
+                        <button className="left-btn" onClick={onHandleDeleteItems}>MASS DELETE</button>
                     </div>
                 </div>
             </div>
             <div className="content-box__bottom-items">
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
+                {requestData?.map((obj:any, index:any) => ( 
+                    <div className="custom-card" key={index}>
+                        <div className="check-box__item">
+                           <input 
+                           type={'checkbox'}
+                            name={"id"}
+                            value={obj.id}
+                            onChange={handleCheck}
+                           />
+                        </div>
+                        <div className="item-description">
+                            <span>{obj.sku}</span>
+                            <span>{obj.name}</span>
+                            <span>{obj.price}{obj.currency}</span>
+                            <span>{obj.type_spec}: {obj.type_values}</span>
+                        </div>
                     </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
-                    </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
-
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
-                    </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
-
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
-                    </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
-
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
-                    </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
-
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
-                    </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
-
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
-                    </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
-
-                <div className="custom-card">
-                    <div className="check-box__item">
-                        <input type="checkbox" />
-                    </div>
-                    <div className="item-description">
-                        <span>JVC200123</span>
-                        <span>AcmeDISC</span>
-                        <span>1.00 $</span>
-                        <span>Size: 700 MB</span>
-                    </div>
-                </div>
+                ))}
             </div>
             <div className="content-box__foot-items">
                 <div className="footer-item">

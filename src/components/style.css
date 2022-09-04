@@ -117,3 +117,93 @@
     font-size: 18;
     font-weight: 600;
 }
+
+.form {
+    width: 100%;
+}
+
+.content-box__row {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    width: 100%;
+}
+
+.content-box__right {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-left: 100px;
+    padding: 8px;
+}
+
+.content-box__left {
+    width: 50%;
+    display: flex;
+    float: left;
+    flex-direction: column;
+}
+
+.content-box__left-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-box {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.item-box span {
+    float: left;
+    margin-top: 2px;
+}
+
+.item-box input {
+    margin-left: 50px;
+    width: 300px;
+    padding: 4px;
+}
+
+.item-box select {
+    margin-left: 100px;
+    width: 200px;
+    padding: 4px;
+}
+
+.txt-item {
+    width: 20%;
+}
+
+#txt-item-select {
+    width: 300px;
+    margin-left: -100px;
+}
+
+.input-item-select {
+    width: 40%;
+    /* background-color: red; */
+}
+.input-item {
+    width: 80%;
+}
+
+.content-box__right-items {
+    border: 2px solid #333;
+    border-radius: 4px;
+    padding: 4px;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 500px;
+}
+
+.content-box__right-items #description-txt {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+    margin-left: -332px;
+}

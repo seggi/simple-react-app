@@ -1,10 +1,8 @@
-import React, {  useState } from 'react'
 import { FOOT_TEXT, PAGE_ONE_TITLE } from '../constants/appLabel'
-import { Checkbox } from './CheckBox';
 import './style.css';
-// import { Checkbox } from './CheckBox';
 
-const ProductList = ({requestData, loading}:any) => {
+
+const ProductList = ({requestData, loading, handleCheck,  onHandleDeleteItems}:any) => {
 
   return (
     <>
@@ -18,20 +16,20 @@ const ProductList = ({requestData, loading}:any) => {
                     </div>
                     <div className="left-items">
                         <button className="right-btn">ADD</button>
-                        <button className="left-btn">MASS DELETE</button>
+                        <button className="left-btn" onClick={onHandleDeleteItems}>MASS DELETE</button>
                     </div>
                 </div>
             </div>
             <div className="content-box__bottom-items">
                 {requestData?.map((obj:any, index:any) => ( 
-                    <div className="custom-card">
-                        <div className="check-box__item" key={index}>
-                            <Checkbox
-                                objData={obj}
-                                onChange={(item:any) => {
-                                    // setData(data.map((d:any) => (d.order === item.order ? item : d)));
-                                }}
-                            />
+                    <div className="custom-card" key={index}>
+                        <div className="check-box__item">
+                           <input 
+                           type={'checkbox'}
+                            name={"id"}
+                            value={obj.id}
+                            onChange={handleCheck}
+                           />
                         </div>
                         <div className="item-description">
                             <span>{obj.sku}</span>

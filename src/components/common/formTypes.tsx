@@ -44,6 +44,7 @@ export const FurnitureForm = ({
           id="#price" 
           type="text" 
           value={length}
+          placeholder="#length"
           onChange={handleLengthChange}
            />
       </div>
@@ -77,6 +78,7 @@ export const IntellectualObject = ({handleWeightChange, weight}:any) => (
               id="#price" 
               type="text" 
               value={weight} 
+              placeholder="#weight"
               onChange={handleWeightChange}/>
           </div>
       </div>

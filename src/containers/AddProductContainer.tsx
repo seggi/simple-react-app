@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import AddProduct from '../components/AddProduct'
+import { saveProduct } from '../redux/actions';
 
 const AddProductContainer: React.FC = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
   const [width, setWidth] = useState('');
   const [height, setHeight] = useState('');
   const [length, setLength] = useState('');
@@ -24,6 +29,7 @@ const AddProductContainer: React.FC = () => {
   const handleChangeProductName = (e: {target: {value: any;}; }) => setProductName(e.target.value);
   const handleChangeProductSKU = (e: {target: {value: any;}; }) => setProductSKU(e.target.value);
 
+
   useEffect(() => {
     if (productSKU !== "" || height !== "" 
       || length !== "" || size !== "" 
@@ -42,7 +48,30 @@ const AddProductContainer: React.FC = () => {
     }
     if (!productPrice) {
       setInputFieldError("Please enter product price")
-   }
+    }
+   else {
+      dispatch(saveProduct({
+        "sku": productSKU,
+        "name" : productName,
+        "price" : productPrice,
+        "product_length": length || "",
+        "product_weight": weight || "",
+        "product_width": width || "",
+        "product_size": size || "",
+        "product_height": height || ""
+      }))
+  
+      setHeight('')
+      setLength('')
+      setProductName('')
+      setProductPrice('')
+      setProductSKU('')
+      setLength('')
+      setWidth('')
+      setSize('')
+      setWeight('')
+      navigate("/product-list");
+    }
   }
 
   return (

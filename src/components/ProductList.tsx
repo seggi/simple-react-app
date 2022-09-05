@@ -32,17 +32,17 @@ const ProductList = ({requestData, loading, handleCheck,  onHandleDeleteItems}:a
                             <span>{obj.price}{obj.currency}</span>
                             
                             {
-                                obj?.product_length !== null 
-                                && obj?.product_height !== null 
-                                && obj?.product_width !==  null ? (
+                                obj?.product_length !== "" 
+                                && obj?.product_height !== "" 
+                                && obj?.product_width !==  "" ? (
                                     <span>{ obj?.product_height }x{ obj?.product_width }x{ obj?.product_length }</span>
                                 ) : null
                             }
                             {
-                                obj?.product_size !== null ? <span>{obj?.product_size}</span> : null
+                                obj?.product_size !== "" ? <span>{obj?.product_size}(MB)</span> : null
                             }
                              {
-                                obj?.product_weight !== null ? <span>{obj?.product_weight}</span> : null
+                                obj?.product_weight !== "" ? <span>{obj?.product_weight} (KG)</span> : null
                             }
                             
                         </div>

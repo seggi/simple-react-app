@@ -75,15 +75,6 @@ const AddProduct = ({
                               <input  id="#price" type="text" value="#sku" />
                             </div>
                         </div>
-
-                        <div className="item-box">
-                            <div className="txt-item">
-                              <span>Price($)</span>
-                            </div>
-                            <div className="input-item">
-                              <input  id="#price" type="text" value="#sku" />
-                            </div>
-                        </div>
                         <div className="item-box">
                           <div className="txt-item">
                             <span id="txt-item-select">Type Switcher</span>

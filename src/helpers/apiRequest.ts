@@ -19,11 +19,10 @@ const apiRequest = async (requestMethod: string, url: any, data: any = null) => 
     const response = await fetch(`${REACT_APP_URL_API}/${url}`);
     return response.json();
    }
+   console.log(data, "++++")
    const response = await fetch(`${REACT_APP_URL_API}/${url}`, requestOptions);
    return response.json();
 
- 
-    
   } catch (e) {
     console.log(e);
   }

@@ -30,7 +30,21 @@ const ProductList = ({requestData, loading, handleCheck,  onHandleDeleteItems}:a
                             <span>{obj.sku}</span>
                             <span>{obj.name}</span>
                             <span>{obj.price}{obj.currency}</span>
-                            <span>{obj.type_spec}: {obj.type_values}</span>
+                            
+                            {
+                                obj?.product_length !== "" 
+                                && obj?.product_height !== "" 
+                                && obj?.product_width !==  "" ? (
+                                    <span>{ obj?.product_height }x{ obj?.product_width }x{ obj?.product_length }</span>
+                                ) : null
+                            }
+                            {
+                                obj?.product_size !== "" ? <span>{obj?.product_size}(MB)</span> : null
+                            }
+                             {
+                                obj?.product_weight !== "" ? <span>{obj?.product_weight} (KG)</span> : null
+                            }
+                            
                         </div>
                     </div>
                 ))}

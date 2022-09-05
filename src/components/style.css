@@ -129,14 +129,6 @@
     width: 100%;
 }
 
-.content-box__right {
-    width: 700px;
-    display: flex;
-    flex-direction: column;
-    float: right;
-    margin-left: 100px;
-    padding: 8px;
-}
 
 .content-box__left {
     width: 50%;
@@ -198,12 +190,11 @@
     display: flex;
     margin-top: 10px;
     flex-direction: column;
-    width: 500px;
 }
 
-.content-box__right-items #description-txt {
+#description-txt {
     margin-top: 10px;
     margin-bottom: 10px;
     float: left;
-    margin-left: -332px;
+    margin-left: -380px;
 }

@@ -1,10 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ADD_PRODUCT_TITLE, CANCEL_BTN, SAVE_BTN } from '../constants/appLabel'
 import Footer from './common/Footer'
+import { FurnitureForm, IntellectualObject, MediaType } from './common/formTypes';
 import TopBar from './common/TopBar'
 import './style.css';
 
-const AddProduct: React.FC = ({onHandleSaveItem}: any) => {
+const AddProduct = ({
+    onHandleSaveItem, 
+    width, 
+    height, 
+    length, 
+    size, 
+    weight, 
+    productTypeSelected,
+    handleWeightChange,
+    handleWidthChange,
+    handleHeightChange,
+    handleLengthChange,
+    handleSizeChange,
+    handleSelectType
+
+  }: any) => {
+  
+  useEffect(()=>{},[productTypeSelected])
+
+  const productFormTypes: any = [
+    {id: "Furniture",  form: <FurnitureForm 
+                          handleWidthChange={handleWidthChange}
+                          handleHeightChange={ handleHeightChange}
+                          handleLengthChange={handleLengthChange}
+                          width={width}
+                          height={height}
+                          length={length}
+                      />}, 
+    {id: "DVD", form: <MediaType handleSizeChange={handleSizeChange} size={size}/>},
+    {id: "Book", form: <IntellectualObject handleWeightChange={handleWeightChange} weight={weight}/>}
+  ];
+
+  
   return (
     <>
       <TopBar 
@@ -13,7 +46,7 @@ const AddProduct: React.FC = ({onHandleSaveItem}: any) => {
             cancelBtn={CANCEL_BTN} 
             pageTitle={ADD_PRODUCT_TITLE}/>
       <div className="content-box__bottom-items">
-          <form action="">
+          <form action="" id="product-form">
             <div className="content-box__row">
                 <div className="content-box__left">
                    <div className="content-box__left-top">
@@ -56,8 +89,14 @@ const AddProduct: React.FC = ({onHandleSaveItem}: any) => {
                             <span id="txt-item-select">Type Switcher</span>
                           </div>
                           <div className="input-item-select">
-                            <select id="productType">
-                                <option selected>Type switcher</option>
+                            <select 
+                              id="productType"
+                              onChange={(e) => handleSelectType(e)}
+                              >
+                                <option value="" disabled selected>Type switcher</option>
+                                <option value="Furniture">Furniture</option>
+                                <option value="DVD">DVD</option>
+                                <option value="Book">Book</option>
                             </select>
                           </div>
                         </div>
@@ -65,69 +104,19 @@ const AddProduct: React.FC = ({onHandleSaveItem}: any) => {
                    <div className="content-box__left-bottom">
                       <div className="dynamic-form" 
                         style={{ 
-                          width: "500px", 
-                          background: "#eee", 
-                          height: "200px", 
+                          width: "550px", 
                           marginLeft: "10px", 
                           marginTop: "10px"}}>
-
+                         { 
+                           productFormTypes.map((item:any) => {
+                             if (productTypeSelected === item.id) {
+                               return item.form;
+                             }
+                             return <></>
+                           })
+                          }
                       </div>
                    </div>
-                </div>
-                <div className="content-box__right">
-                   <div className="content-box__right-items">
-                      <div className="item-box">
-                          <div className="txt-item">
-                            <span>Size (MB)</span>
-                          </div>
-                          <div className="input-item">
-                            <input  id="#price" type="text" value="#sku" />
-                          </div>
-                      </div>
-                      <span id="description-txt">*Product description</span>
-                   </div>
-                  
-                   <div className="content-box__right-items">
-                      <div className="item-box">
-                          <div className="txt-item">
-                            <span>Height (CM)</span>
-                          </div>
-                          <div className="input-item">
-                            <input  id="#price" type="text" value="#sku" />
-                          </div>
-                      </div>
-
-                      <div className="item-box">
-                          <div className="txt-item">
-                            <span>Width (CM)</span>
-                          </div>
-                          <div className="input-item">
-                            <input  id="#price" type="text" value="#sku" />
-                          </div>
-                      </div>
-                      <div className="item-box">
-                          <div className="txt-item">
-                            <span>length (CM)</span>
-                          </div>
-                          <div className="input-item">
-                            <input  id="#price" type="text" value="#sku" />
-                          </div>
-                      </div>
-                      <span id="description-txt">*Product description</span>
-                   </div>
-
-                   <div className="content-box__right-items">
-                      <div className="item-box">
-                          <div className="txt-item">
-                            <span>Weight (KG)</span>
-                          </div>
-                          <div className="input-item">
-                            <input  id="#price" type="text" value="#sku" />
-                          </div>
-                      </div>
-                      <span id="description-txt">*Product description</span>
-                   </div>
-
                 </div>
             </div>
           </form>

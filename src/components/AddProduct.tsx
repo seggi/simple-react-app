@@ -18,11 +18,18 @@ const AddProduct = ({
     handleHeightChange,
     handleLengthChange,
     handleSizeChange,
-    handleSelectType
-
+    handleSelectType,
+    productPrice,
+    productName,
+    productSKU,
+    handleChangePrice,
+    handleChangeProductName,
+    handleChangeProductSKU,
+    inputFieldError
   }: any) => {
   
-  useEffect(()=>{},[productTypeSelected])
+  useEffect(()=>{
+  },[productTypeSelected])
 
   const productFormTypes: any = [
     {id: "Furniture",  form: <FurnitureForm 
@@ -45,8 +52,15 @@ const AddProduct = ({
             btnThree={SAVE_BTN} 
             cancelBtn={CANCEL_BTN} 
             pageTitle={ADD_PRODUCT_TITLE}/>
+       {
+        inputFieldError !== '' ? (
+        <div className="error-message">
+          <span>{inputFieldError}</span>
+        </div>) : null
+       }
       <div className="content-box__bottom-items">
           <form action="" id="product-form">
+         
             <div className="content-box__row">
                 <div className="content-box__left">
                    <div className="content-box__left-top">
@@ -55,7 +69,13 @@ const AddProduct = ({
                               <span>SKU</span>
                             </div>
                             <div className="input-item">
-                              <input  id="#sku" type="text" value="#sku" />
+                              <input  
+                                id="#sku" 
+                                type="text" 
+                                value={productSKU} 
+                                placeholder="$sku"
+                                onChange={handleChangeProductSKU}
+                                />
                             </div>
                           
                         </div>
@@ -64,7 +84,12 @@ const AddProduct = ({
                               <span>Name</span>
                             </div>
                             <div className="input-item">
-                              <input  id="#name" type="text" value="#sku" />
+                              <input  
+                                id="#name" type="text" 
+                                value={productName} 
+                                placeholder="#name" 
+                                onChange={handleChangeProductName} 
+                                />
                             </div>
                         </div>
                         <div className="item-box">
@@ -72,7 +97,13 @@ const AddProduct = ({
                               <span>Price($)</span>
                             </div>
                             <div className="input-item">
-                              <input  id="#price" type="text" value="#sku" />
+                              <input  
+                                id="#price" 
+                                type="text"
+                                value={productPrice} 
+                                placeholder="price"
+                                onChange={handleChangePrice}
+                                />
                             </div>
                         </div>
                         <div className="item-box">

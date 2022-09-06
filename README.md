@@ -1,12 +1,17 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project use docker to for development.
 
-## Available Scripts
+## How to run the app.
 
-In the project directory, you can run:
+You can run the system by using two way:
 
-### `yarn start`
+### `Run using the old way access index.php`
+
+Run in the root of the your system if you are using linux or unix 
+by opening terminal
+
+### `sudo docker-compose up app`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

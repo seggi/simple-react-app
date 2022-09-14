@@ -1,4 +1,4 @@
-const { REACT_APP_URL_API } = process.env;
+const REACT_APP_URL_API  = "https://nankim.000webhostapp.com/";
 const contentType: {} = {'Content-type': 'application/json'  };
 
 interface RequestOptions {

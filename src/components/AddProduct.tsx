@@ -59,7 +59,7 @@ const AddProduct = ({
         </div>) : null
        }
       <div className="content-box__bottom-items">
-          <form action="" id="product-form">
+          <form action="" id="product_form">
          
             <div className="content-box__row">
                 <div className="content-box__left">
@@ -70,7 +70,7 @@ const AddProduct = ({
                             </div>
                             <div className="input-item">
                               <input  
-                                id="#sku" 
+                                id="sku" 
                                 type="text" 
                                 value={productSKU} 
                                 placeholder="$sku"
@@ -85,7 +85,7 @@ const AddProduct = ({
                             </div>
                             <div className="input-item">
                               <input  
-                                id="#name" type="text" 
+                                id="name" type="text" 
                                 value={productName} 
                                 placeholder="#name" 
                                 onChange={handleChangeProductName} 
@@ -98,7 +98,7 @@ const AddProduct = ({
                             </div>
                             <div className="input-item">
                               <input  
-                                id="#price" 
+                                id="price" 
                                 type="text"
                                 value={productPrice} 
                                 placeholder="price"

@@ -1,31 +1,26 @@
-const { REACT_APP_URL_API } = process.env;
-const contentType: {} = {'Content-type': 'application/json'  };
+import axios from "axios";
+const REACT_APP_URL_API  = "https://nankim.000webhostapp.com/";
 
-interface RequestOptions {
-    method: string,
-    body: any
-    headers: any
-}
 
 const apiRequest = async (requestMethod: string, url: any, data: any = null) => {
-  const requestOptions: RequestOptions = {
-    method: requestMethod,
-    body: JSON.stringify(data),
-    headers: contentType,
-  };
-
   try {
    if (requestMethod === "GET") {
-    const response = await fetch(`${REACT_APP_URL_API}/${url}`);
-    return response.json();
+    const response = await axios.get(`${REACT_APP_URL_API}/${url}`);
+    return response.data;
    }
-   console.log(data, "++++")
-   const response = await fetch(`${REACT_APP_URL_API}/${url}`, requestOptions);
-   return response.json();
-
+   else if (requestMethod === "DELETE") {
+      const response =  await axios.post(`${REACT_APP_URL_API}/${url}`,JSON.stringify(data));
+      return response.data;
+     
+   } else {
+    const response = await axios.post(`${REACT_APP_URL_API}/${url}`, JSON.stringify(data) );
+    return response.data;
+    
+   }
   } catch (e) {
     console.log(e);
   }
+    
 };
 
 export default apiRequest;

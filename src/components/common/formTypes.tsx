@@ -13,10 +13,10 @@ export const FurnitureForm = ({
       </div>
       <div className="input-item">
         <input  
-          id="#price" 
+          id="height" 
           type="text" 
           value={height} 
-          placeholder='#sku' 
+          placeholder='#height' 
           onChange={handleHeightChange} />
       </div>
   </div>
@@ -27,10 +27,10 @@ export const FurnitureForm = ({
       </div>
       <div className="input-item">
         <input  
-          id="#price" 
+          id="width" 
           type="text" 
           value={width} 
-          placeholder='#shu'
+          placeholder='#width'
           onChange={handleWidthChange}
           />
       </div>
@@ -41,7 +41,7 @@ export const FurnitureForm = ({
       </div>
       <div className="input-item">
         <input  
-          id="#price" 
+          id="length" 
           type="text" 
           value={length}
           placeholder="#length"
@@ -60,7 +60,7 @@ export const MediaType = ({handleSizeChange, size}: any) => (
             <span>Size (MB)</span>
           </div>
           <div className="input-item">
-            <input  id="#price" type="text" value={size} placeholder="$size" onChange={handleSizeChange}/>
+            <input  id="size" type="text" value={size} placeholder="$size" onChange={handleSizeChange}/>
           </div>
       </div>
       <span id="description-txt">*Product description</span>
@@ -75,7 +75,7 @@ export const IntellectualObject = ({handleWeightChange, weight}:any) => (
           </div>
           <div className="input-item">
             <input  
-              id="#price" 
+              id="weight" 
               type="text" 
               value={weight} 
               placeholder="#weight"

@@ -59,8 +59,7 @@ const AddProduct = ({
         </div>) : null
        }
       <div className="content-box__bottom-items">
-          <form action="" id="product-form">
-         
+          <form action="" id="#product_form">
             <div className="content-box__row">
                 <div className="content-box__left">
                    <div className="content-box__left-top">
@@ -73,7 +72,7 @@ const AddProduct = ({
                                 id="#sku" 
                                 type="text" 
                                 value={productSKU} 
-                                placeholder="$sku"
+                                placeholder="#sku"
                                 onChange={handleChangeProductSKU}
                                 />
                             </div>
@@ -112,7 +111,7 @@ const AddProduct = ({
                           </div>
                           <div className="input-item-select">
                             <select 
-                              id="productType"
+                              id="#productType"
                               onChange={(e) => handleSelectType(e)}
                               >
                                 <option value="" disabled selected>Type switcher</option>

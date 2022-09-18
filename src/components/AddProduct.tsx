@@ -60,7 +60,6 @@ const AddProduct = ({
        }
       <div className="content-box__bottom-items">
           <form action="" id="#product_form">
-         
             <div className="content-box__row">
                 <div className="content-box__left">
                    <div className="content-box__left-top">
@@ -72,7 +71,6 @@ const AddProduct = ({
                               <input  
                                 id="#sku" 
                                 type="text" 
-                                name='NameTest002'
                                 value={productSKU} 
                                 placeholder="#sku"
                                 onChange={handleChangeProductSKU}

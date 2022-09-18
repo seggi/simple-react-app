@@ -215,7 +215,7 @@
     align-content: center;
 }
 
-#delete-checkbox {}
+.delete-checkbox {}
 #delete-product-btn {}
 #product_form{}
 #sku{}

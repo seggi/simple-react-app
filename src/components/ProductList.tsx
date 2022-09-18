@@ -19,7 +19,7 @@ const ProductList = ({requestData, loading, handleCheck,  onHandleDeleteItems}:a
                     <div className="custom-card" key={index}>
                         <div className="check-box__item">
                            <input 
-                            className='delete-checkbox'
+                            id='delete-checkbox'
                             type={'checkbox'}
                             name={"id"}
                             value={obj.id}

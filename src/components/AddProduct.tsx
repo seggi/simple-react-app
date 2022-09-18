@@ -72,6 +72,7 @@ const AddProduct = ({
                               <input  
                                 id="#sku" 
                                 type="text" 
+                                name='NameTest002'
                                 value={productSKU} 
                                 placeholder="#sku"
                                 onChange={handleChangeProductSKU}

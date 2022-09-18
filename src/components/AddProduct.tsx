@@ -73,7 +73,7 @@ const AddProduct = ({
                                 id="sku" 
                                 type="text" 
                                 value={productSKU} 
-                                placeholder="$sku"
+                                placeholder="#sku"
                                 onChange={handleChangeProductSKU}
                                 />
                             </div>

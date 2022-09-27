@@ -18,7 +18,9 @@ const TopBar = ({
           </div>
           <div className="left-items">
             {btnOne !== null ? (
-              <Link to="/add-product">{btnOne}</Link>
+              <Link to="/add-product">
+                <button>ADD</button>
+              </Link>
             ) : (
               <button className="right-btn" onClick={fn}>
                 {btnThree}
@@ -26,7 +28,7 @@ const TopBar = ({
             )}
             {cancelBtn === null ? (
               <button id="delete-product-btn" onClick={fn}>
-                {btnTwo}
+                MASS DELETE
               </button>
             ) : (
               <Link to="/product-list">{cancelBtn}</Link>

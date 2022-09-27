@@ -24,13 +24,13 @@ const TopBar = ({
                 {btnThree}
               </button>
             )}
-            {/* {cancelBtn === null ? ( */}
-            <button name="MASS DELETE" id="delete-product-btn" onClick={fn}>
-              {btnTwo}
-            </button>
-            {/* ) : (
+            {cancelBtn === null ? (
+              <button id="delete-product-btn" onClick={fn}>
+                {btnTwo}
+              </button>
+            ) : (
               <Link to="/product-list">{cancelBtn}</Link>
-            )} */}
+            )}
           </div>
         </div>
       </div>
